@@ -5,18 +5,18 @@ import Typewriter from "@/components/typewriter";
 export default function HomePage() {
   return (
     <div className="flex items-start justify-center min-h-screen pt-30">
-      {/* Wrapper for image + text */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-6">
 
-        {/* LEFT SIDE: Image */}
-        <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-600 flex-shrink-0">
+        <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-blue-600 flex-shrink-0">
           <Image
             src="/image/Abdullah_Rifak.jpeg"
             alt="Abdullah"
             fill
             className="object-cover"
             priority
-            sizes="192px"
+            sizes="(max-width: 640px) 128px,
+         (max-width: 768px) 160px,
+         192px"
           />
         </div>
 
