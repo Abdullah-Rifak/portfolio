@@ -2,20 +2,20 @@
 
 import { useState, useEffect } from "react";
 
-export default function Typewriter() {
-  const roles = [
-    "Full-Stack Engineer",
-    "Full-Stack Developer",
-    "Software Engineer",
-    "Software Developer"
-  ];
+const ROLES = [
+  "Full-Stack Engineer",
+  "Full-Stack Developer",
+  "Software Engineer",
+  "Software Developer",
+];
 
+export default function Typewriter() {
   const [text, setText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const currentRole = roles[roleIndex];
+    const currentRole = ROLES[roleIndex];
 
     const timeout = setTimeout(() => {
       if (!isDeleting) {
@@ -31,7 +31,7 @@ export default function Typewriter() {
 
         if (text.length - 1 === 0) {
           setIsDeleting(false);
-          setRoleIndex((prev) => (prev + 1) % roles.length);
+          setRoleIndex((prev) => (prev + 1) % ROLES.length);
         }
       }
     }, isDeleting ? 70 : 120);
